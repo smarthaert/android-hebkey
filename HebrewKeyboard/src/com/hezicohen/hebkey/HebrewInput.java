@@ -49,9 +49,9 @@ public class HebrewInput extends InputMethodService
     static final int HARD_KEYS_TRANSLATION[] = {1513, 1504, 1489, 1490,
     											1511, 1499, 1506, 1497,
     											1503, 1495, 1500, 1498,
-    											1510, 1502, 1501, 1508, 0 /*Q*/,
+    											1510, 1502, 1501, 1508, 1509 /*Q*/,
     											1512, 1491, 1488, 1493, 1492, 
-    											0 /*W*/, 1505, 1496, 1494, 1514};
+    											1507 /*W*/, 1505, 1496, 1494, 1514};
     
     private KeyboardView mInputView;
     private CandidateView mCandidateView;
@@ -406,9 +406,9 @@ public class HebrewInput extends InputMethodService
                 	else if(keyCode >= KeyEvent.KEYCODE_A &&
                 			keyCode <= KeyEvent.KEYCODE_COMMA &&
                 			mCurKeyboard == mQwertyHebKeyboard &&
-                			(event.getMetaState()&KeyEvent.META_ALT_ON) == 0)
+                			((event.getMetaState()&KeyEvent.META_ALT_ON) == 0) &&
+                			((event.getMetaState()&KeyEvent.META_SHIFT_ON) == 0))
                 	{
-                		Log.d("HebKey", "this is hebrew biatch");
                 		sendKey(HARD_KEYS_TRANSLATION[keyCode - KeyEvent.KEYCODE_A]);
                 		return true;
                 	}
