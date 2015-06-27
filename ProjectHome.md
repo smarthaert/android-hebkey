@@ -1,0 +1,1 @@
+Adds hebrew input support to android, more details at the website: http://code.snippets.co.il/hebkey
